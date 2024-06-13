@@ -1,0 +1,72 @@
+table tr,td{
+    border:1px solid white;
+    border-collapse: collapse;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    color: white;
+}
+#footer{
+    background-color: #F42F2C;
+    height:350px;
+    position: relative;
+    display: flex;
+    
+    padding-left:106px;
+    padding-right: 106px;
+    padding-top: 200px;
+}
+.footer-nav{
+    background-color: #222222;
+    color: white;
+    height: 58px;
+}
+.footer-nav{
+    display: flex;
+    flex-direction: row;
+    column-gap: 526px;
+    align-items: center;
+}
+span{
+    margin-left:10px ;
+}
+.footer-nav a{
+    color: #F42F2C;
+}
+.opening-hours h3{
+    color: white;
+}
+.opening-hours{
+    width:520px;
+    line-height: 50px;
+}
+.Contact_Us{
+    color: white;
+}
+.newsletter{
+color:white;
+width:600px;
+
+}
+.newsletter input{
+    padding: 6px 94px;
+    margin-top: 29px;
+    border-radius: 10px;
+    border:none;
+    position: relative;
+}
+.newsletter i{
+    position: absolute;
+    top: 297px;
+    right: 131px;
+
+}
+table{
+    width:300px;
+}
+
+
+
+
+
+

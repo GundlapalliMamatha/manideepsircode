@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       #filter ul{
+        display: flex;
+        gap: 20px;
+        list-style-type: none;
+        border-bottom: 1px solid grey;
+       }
+    </style>
+</head>
+<body>
+    <div id="filter">
+        <ul>
+            <li>Sort By</li>
+            <li id="Relevance" onclick="relevance()">Relevance</li>
+            <li id="Popularity" onclick="Popularity()">Popularity</li>
+            <li id="PriceLowToHigh" onclick="PriceLowToHigh()">Price -- Low to High</li>
+            <li id="PriceHighToLow" onclick="PriceHighToLow()">Price -- High to Low</li>
+            <li id="NewestFirst" onclick="NewestFirst()">Newest First</li>
+        </ul>
+    </div>
+    <script>
+            function Popularity(){
+            document.getElementById("Popularity").style.color = "blue";
+            document.getElementById("Popularity").style.borderBottom = "1px solid blue";
+            document.getElementById("Relevance").style.color = "black";
+            document.getElementById("PriceLowToHigh").style.color = "black";
+            document.getElementById("PriceHighToLow").style.color = "black";
+            document.getElementById("NewestFirst").style.color = "black";
+            }
+            function PriceLowToHigh(){
+            document.getElementById("PriceLowToHigh").style.color = "blue";
+            document.getElementById("PriceLowToHigh").style.borderBottom = "1px solid blue";
+            document.getElementById("Popularity").style.color = "black";
+            document.getElementById("Relevance").style.color = "black";
+            document.getElementById("PriceHighToLow").style.color = "black";
+            document.getElementById("NewestFirst").style.color = "black";
+            }
+            function PriceHighToLow(){
+            document.getElementById("PriceHighToLow").style.color = "blue";
+            document.getElementById("PriceHighToLow").style.borderBottom = "1px solid blue"; 
+            document.getElementById("Popularity").style.color = "black";
+            document.getElementById("PriceLowToHigh").style.color = "black";
+            document.getElementById("Relevance").style.color = "black";
+            document.getElementById("NewestFirst").style.color = "black";
+            }
+            function NewestFirst(){
+            document.getElementById("NewestFirst").style.color = "blue";
+            document.getElementById("NewestFirst").style.borderBottom = "1px solid blue"; 
+            document.getElementById("Popularity").style.color = "black";
+            document.getElementById("PriceLowToHigh").style.color = "black";
+            document.getElementById("PriceHighToLow").style.color = "black";
+            document.getElementById("Relevance").style.color = "black";
+        
+            }    
+
+    </script>
+    
+</body>
+</html>

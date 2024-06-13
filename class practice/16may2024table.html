@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            margin: 4rem;
+            background-image: url(regbackground.jpg);
+            background-size: 1500px;
+            background-repeat: no-repeat;
+        }
+
+        h1 {
+            text-align: center;
+            color: rgb(8, 1, 1);
+        }
+
+        #formcontainer {
+            margin-bottom: 20px;
+            text-align: center;
+            
+        }
+
+        input,
+        textarea {
+            width: 300px;
+            padding: 5px;
+            margin-top: 5px;
+            border: 1px solid black;
+            background-color: rgb(225, 234, 235);
+        }
+
+        table {
+            border-collapse: collapse; 
+            margin-bottom: 20px; 
+            width: 80%; 
+            margin-left: 10%;;
+        }
+
+        th,
+        td {
+            box-shadow: 10PX 10PX 10PX white;
+            border: 1px solid #eee7e7; 
+            padding: 8px; 
+            text-align: left; 
+            color:rgb(1, 3, 4)
+        }
+
+        label {
+            margin-top: 30px;
+            color: rgb(2, 6, 10);
+        }
+
+    </style>
+</head>
+<body>
+<div id="formcontainer">
+    <form onsubmit="addData(event)">
+        <h3>REGISTRATION FORM</h3>
+        <label for="Nameinput">Name</label>&nbsp;&nbsp;
+        <input type="text" id="Nameinput" placeholder="Enter Name"><br/>
+        <label for="Emailinput">Email</label>&nbsp;&nbsp;
+        <input type="email" id="Emailinput" placeholder="Enter Email"><br/>
+        <label for="Mobilenumberinput">Mobile Number</label>
+        <input type="text" id="Mobilenumberinput" placeholder="Enter Mobile Number"><br/>
+        <label for="Addressinput">Address</label>
+        <textarea placeholder="Enter Address" id="Addressinput"></textarea><br/>
+        <button type="submit">Add</button>
+    </form>
+</div>
+<div>
+    <table id="table1">
+        <tr>
+            <th>Name</th>
+            <th style="padding-right:50px;">Email</th>
+            <th>Mobile Number</th>
+            <th>Address</th>
+            <th>Action</th>
+        </tr>
+    </table>
+</div>
+<script>
+    function addData(event) {
+        event.preventDefault();
+        let Name = document.getElementById("Nameinput").value;
+        let Email = document.getElementById("Emailinput").value;
+        let MobileNumber = document.getElementById("Mobilenumberinput").value;
+        let Address = document.getElementById("Addressinput").value;
+        let table = document.getElementById("table1");
+        let newRow = table.insertRow(table.rows.length);
+
+        newRow.insertCell(0).innerHTML = Name;
+        newRow.insertCell(1).innerHTML = Email;
+        newRow.insertCell(2).innerHTML = MobileNumber;
+        newRow.insertCell(3).innerHTML = Address;
+        newRow.insertCell(4).innerHTML =
+            '<button onclick="edit(this)">Edit</button>' +
+            '<button onclick="deleteRow(this)">Delete</button>';
+    }
+
+    function edit(button) {
+        let row = button.parentNode.parentNode;
+        let nameCell = row.cells[0];
+        let emailCell = row.cells[1]; 
+        let mobileCell = row.cells[2]; 
+        let addressCell = row.cells[3]; 
+
+        let nameInput = prompt("Enter the updated name:", nameCell.innerHTML); 
+        let emailInput = prompt("Enter the updated email:", emailCell.innerHTML); 
+        let numberInput = prompt("Enter the updated mobile number:", mobileCell.innerHTML); 
+        let addressInput = prompt("Enter the updated address:", addressCell.innerHTML);  
+
+        nameCell.innerHTML = nameInput; 
+        emailCell.innerHTML = emailInput; 
+        mobileCell.innerHTML = numberInput; 
+        addressCell.innerHTML = addressInput; 
+    }
+
+    function deleteRow(button) {
+        let row = button.parentNode.parentNode;
+        row.parentNode.removeChild(row);
+    }
+</script>
+</body>
+</html>

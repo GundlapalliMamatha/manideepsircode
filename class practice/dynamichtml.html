@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display:flex;
+            column-gap: 90px;
+            margin-top: -74px;
+            margin-bottom:24px;
+            height: 100px;
+        }
+        img{
+            margin-bottom: 30px;
+            margin-top: -33px;
+        }
+       .one-one ul{
+           display: flex;
+           gap: 5px;
+        }
+        .one-one li{
+            color: grey;
+            list-style: none;
+        }
+        .header{
+            background-color: #F1F1F1;
+            padding: 1px 14px;
+            margin: 10px 20px;
+            border-radius: 10px;
+        }
+        .product1{
+            background-color: white;
+            border: 1px solid grey;
+            margin-bottom: 16px;
+            padding-bottom: 10px;
+        }
+        .START-FROM{
+            color: brown;
+        }
+        .NIZAMPET{
+            color: grey;
+        }
+        p{
+            color: grey;
+        }
+        #end-time{
+            color: grey;
+        }
+        #date{
+            color: red;
+        }
+        #rating{
+            background-color: rgb(97, 171, 97);
+            color: white;
+            padding: 1px 1px;
+        }
+        .tatal{
+            display: flex;
+            gap: 10px;
+        }
+        button{
+            margin-top:44px ;
+        }
+        #button:active{
+            color: red;
+            background-color: blue;
+            margin-bottom: 10px;
+        }
+        h5{
+            margin-bottom: -56px;
+        }
+        #original-price{
+            text-decoration: line-through;
+        }
+        #button{
+            background-color: blue;
+            color: aliceblue;
+            padding: 5px;
+            margin-left: 58px;
+            position: absolute;
+            top: 139px;
+        }
+    </style>
+</head>
+<body>
+    <div class="total" id="total"></div>
+    <script>
+        var buses = [
+            {
+                startfrom: 'START FROM',
+                miyapur: 'MIYAPUR',
+                NIZAMPETOTHERSTOPS: 'NIZAMPET + 17 OTHER STOPS',
+                name: 'November Travel',
+                seattype: 'Bharat Benz A/C Sleeper (2+1)',
+                starttime: '19:20',
+                timeduration: '11h 45m',
+                endtime: '07:15',
+                price: 800,
+                date: '07-Jun',
+                endplace: 'Marathahalli',
+                imgSrc: 'https://s3.rdbuz.com/Images/webplatform/india/primo/primoLogo.svg',
+                ratingCount: 635,
+                averageRating: 4.6,
+                discount: 5,
+                currentprice: '',
+                availableseats: '13 Seats available',
+            },
+            {
+                startfrom: 'START FROM',
+                miyapur: 'MIYAPUR',
+                NIZAMPETOTHERSTOPS: 'NIZAMPET + 17 OTHER STOPS',
+                name: 'November Travel',
+                seattype: 'Bharat Benz A/C Sleeper (2+1)',
+                starttime: '19:20',
+                timeduration: '11h 45m',
+                endtime: '07:15',
+                price: 800,
+                date: '07-Jun',
+                endplace: 'Marathahalli',
+                imgSrc: 'https://s3.rdbuz.com/Images/webplatform/india/primo/primoLogo.svg',
+                ratingCount: 635,
+                averageRating: 4.6,
+                discount: 5,
+                currentprice: '',
+                availableseats: '13 Seats available',
+            },
+            {
+                startfrom: 'START FROM',
+                miyapur: 'MIYAPUR',
+                NIZAMPETOTHERSTOPS: 'NIZAMPET + 17 OTHER STOPS',
+                name: 'November Travel',
+                seattype: 'Bharat Benz A/C Sleeper (2+1)',
+                starttime: '19:20',
+                timeduration: '11h 45m',
+                endtime: '07:15',
+                price: 800,
+                date: '07-Jun',
+                endplace: 'Marathahalli',
+                imgSrc: 'https://s3.rdbuz.com/Images/webplatform/india/primo/primoLogo.svg',
+                ratingCount: 635,
+                averageRating: 4.6,
+                discount: 5,
+                currentprice: '',
+                availableseats: '13 Seats available',
+            }
+        ];
+
+        var busesStr = '';
+        for (var i = 0; i < buses.length; i++) {
+            busesStr += `<div class="product1">
+                <header class="header">
+                <h4><span class="START-FROM">${buses[i].startfrom}</span>
+                    ${buses[i].miyapur}<span class="NIZAMPET">${buses[i].NIZAMPETOTHERSTOPS} </span></h4>
+                </header>
+                <section class="section">
+                <img src="${buses[i].imgSrc}" id="image" width="100px" height="100px">
+                <div class="container">
+                    <div class="one">
+                    <h4 id="travel-company">${buses[i].name}</h4>
+                    <p id="seat-type">${buses[i].seattype}</p>
+                       <div class="one-one">
+                            <ul>
+                                <li><i class="fa-sharp fa-solid fa-bus"></i></li>
+                                <li><i class="fa-sharp fa-solid fa-bottle-water"></i></li>
+                                <li><i class="fa-sharp fa-solid fa-blanket"></i></li>
+                                <li><i class="fa-sharp fa-solid fa-plug"></i></li>
+                                <li>livetracking</li>
+                            </ul>
+                        </div>
+                    </div>
+                
+                        <div class="two">
+                            <h2 id="strt-time">${buses[i].starttime}</h2>
+                            <p>${buses[i].miyapur}</p>
+                        </div>
+                        <div class="three">
+                            <p id="time-duration">${buses[i].timeduration}</p>
+                        </div>
+                        <div class="four">
+                            <h3 id="end-time">${buses[i].endtime}</h3>
+                            <h3  id="date">${buses[i].date}</h3>
+                            <h3 id="end-place">${buses[i].endplace}</h3>
+                        </div>
+                        <div class="five">
+                            <p id="rating"><i class="fa-light fa-star"></i>${buses[i].averageRating}</p>
+                            <h3><i class="fa-thin fa-people-simple"></i>${buses[i].ratingCount}</h3>
+                        </div>
+                        <div class="six">
+                            <h3>${buses[i].startfrom} </h3>
+                            <h1 id="original-price">${buses[i].price}</h1>
+                            <h5 id="discount">${buses[i].discount}</h5>
+                            <h1 id="current-price">${buses[i].currentprice=buses[i].price-buses[i].price*buses[i].discount/100}</h1>
+                        </div>
+                        <div class="seven">
+                            <p>${buses[i].availableseats}</p>
+                        </div>
+                </section>
+                </div>`;
+        }
+
+        document.getElementById('total').innerHTML = busesStr;
+
+        console.log(busesStr);
+    </script>
+</body>
+</html>

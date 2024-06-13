@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            list-style-type: none;
+            font-size: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            padding-bottom: 15px;
+        }
+        li {
+            cursor: pointer;
+        }
+        .active {
+            color: blue;
+            border-bottom: 3px solid blue;
+        }
+
+        .product-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            display: flex;
+        }
+
+        .product-image {
+            width: 200px;
+            height: auto;
+        }
+
+        .product-details {
+            padding: 16px;
+        }
+
+        .product-title {
+            font-size: 1.25em;
+            font-weight: bold;
+            color: #333;
+            margin: 0 0 8px;
+        }
+
+        .product-price {
+            display: flex;
+            align-items: baseline;
+            margin-bottom: 8px;
+        }
+
+        .current-price {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .original-price {
+            font-size: 0.875em;
+            color: #888;
+            text-decoration: line-through;
+            margin-left: 8px;
+        }
+
+        .discount {
+            font-size: 0.875em;
+            color: #10b981;
+            margin-left: 8px;
+        }
+
+        .product-rating {
+            display: flex;
+            align-items: center;
+        }
+
+        .star {
+            color: #fbbf24;
+            font-size: 1em;
+        }
+
+        .star.gray {
+            color: #e5e7eb;
+        }
+
+        .rating-count {
+            font-size: 0.875em;
+            color: #555;
+            margin-left: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <ul>
+        <li class="active" onclick="onTabChange('relevance')" id="relevance">Relevance</li>
+        <li onclick="onTabChange('popularity')" id="popularity">Popularity</li>
+        <li onclick="onTabChange('low-to-high')" id="low-to-high">Price -- Low to High</li>
+        <li onclick="onTabChange('high-to-low')" id="high-to-low">Price -- High to Low</li>
+        <li onclick="onTabChange('newest-first')" id="newest-first">Newest First</li>
+    </ul>
+
+
+    <div id="products-container">
+        
+    </div>
+
+    <script>
+
+        function onTabChange(tabName) {
+            var relevanceLi = document.getElementById('relevance');
+            var popularityLi = document.getElementById('popularity');
+            var lowToHighLi = document.getElementById('low-to-high');
+            var highToLowLi = document.getElementById('high-to-low');
+            var newestFirstLi = document.getElementById('newest-first');
+
+            relevanceLi.classList.remove('active');
+            popularityLi.classList.remove('active');
+            lowToHighLi.classList.remove('active');
+            highToLowLi.classList.remove('active');
+            newestFirstLi.classList.remove('active');
+
+            switch(tabName) {
+                case 'relevance': {
+                    relevanceLi.classList.add('active');
+                    break;
+                }
+                case 'popularity': {
+                    popularityLi.classList.add('active');
+                    break;
+                }
+                case 'low-to-high': {
+                    lowToHighLi.classList.add('active');
+                    break;
+                }
+                case 'high-to-low': {
+                    highToLowLi.classList.add('active');
+                    break;
+                }
+                case 'newest-first': {
+                    newestFirstLi.classList.add('active');
+                    break;
+                }
+            }
+        }
+
+
+        var product = {
+            name: 'Voltas Beko, A Tata Product 6 Kg 5 Star Fully Automatic Front Loading Washing Machine (2023 Model, WFL6012B7CUSKA/WXV, White, In-Built Heater)',
+            price: 36990,
+            imgSrc: 'https://m.media-amazon.com/images/I/71tXNy7SVZL._AC_UY218_.jpg',
+            ratingCount: 110,
+            averageRating: 3.8,
+            discount: 43
+        };
+
+        for (var selectedKey in product) {
+            console.log(selectedKey, product[selectedKey]);
+        }
+
+        var i = 0;
+        while(i < 5) {
+            console.log(i);
+            i++;
+        }
+
+        var sum = 0;
+        var products = [
+            {
+                name: 'Voltas Beko, A Tata Product 6 Kg 5 Star Fully Automatic Front Loading Washing Machine (2023 Model, WFL6012B7CUSKA/WXV, White, In-Built Heater)',
+                price: 36990,
+                imgSrc: 'https://m.media-amazon.com/images/I/71tXNy7SVZL._AC_UY218_.jpg',
+                ratingCount: 110,
+                averageRating: 3.8,
+                discount: 43,
+                brand: 'Voltas'
+            },
+            {
+                name: 'IFB 6 Kg 5 Star AI Powered Fully Automatic Front Load Washing Machine 2X Power Steam (DIVA AQUA GBS 6010, 2023 Model, Grey, In-built Heater, 4 years Comprehensive Warranty)',
+                price: 36990,
+                imgSrc: 'https://m.media-amazon.com/images/I/71tXNy7SVZL._AC_UY218_.jpg',
+                ratingCount: 110,
+                averageRating: 3.8,
+                discount: 43,
+                brand: 'IFB'
+            },
+            {
+                name: 'Samsung 7 kg Fully-Automatic Top Loading Washing Machine (WA70A4002GS/TL, Imperial Silver)',
+                price: 36990,
+                imgSrc: 'https://m.media-amazon.com/images/I/71tXNy7SVZL._AC_UY218_.jpg',
+                ratingCount: 110,
+                averageRating: 3.8,
+                discount: 43,
+                brand: 'Samsung'
+            }
+        ];
+
+        var j = 0;
+        var totalAmount = 0;
+        while (j < products.length) {
+            totalAmount += products[j].price;
+            j++;
+        }
+        console.log(totalAmount);
+
+
+        do {
+            console.log('In do while loop...');
+        } while (0 < 0);
+
+        while(0 < 0) {
+            console.log('In while loop...');
+        }
+
+
+        for (var k = 5; k > 0; k--) {
+            console.log('In for loop: ', k);
+        }
+
+        var filteredProducts = [];
+
+        for (var i = 0; i < products.length; i++) {
+            if (products[i].brand === 'Voltas') {
+                filteredProducts.push(products[i]);
+            }
+        }
+
+        console.log(filteredProducts);
+
+
+        var productsStr = '';
+        for (var i = 0; i < filteredProducts.length; i++) {
+            // for (var key in products[i]) {
+            //     console.log(key, products[i][key]);
+            // }
+            productsStr += `
+                <div class="product-card">
+                    <img class="product-image" src=${filteredProducts[i].imgSrc}
+                        alt="No Image" width="250px" id="product-image">
+                    <div class="product-details">
+                        <h2 class="product-title" id="product-title">${filteredProducts[i].name}</h2>
+                        <div class="product-price">
+                            <span class="current-price" id="current-price">${filteredProducts[i].price - filteredProducts[i].discount}</span>
+                            <span class="original-price" id="original-price">${filteredProducts[i].price}</span>
+                            <span class="discount" id="discount">${filteredProducts[i].discount}</span>
+                        </div>
+                        <div class="product-rating">
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9734;</span>
+                            <span class="rating-count" id="rating-count">${filteredProducts[i].averageRating}</span>
+                        </div>
+                        <button onclick="addToCart()">Add to Cart</button>
+                    </div>
+                </div>`;
+        }
+
+        document.getElementById('products-container').innerHTML = productsStr;
+
+        console.log(productsStr);
+
+    </script>
+</body>
+</html>

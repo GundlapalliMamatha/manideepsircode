@@ -1,0 +1,34 @@
+
+.navbar{
+    display: flex;
+    gap:100px;
+    border-bottom: 1px solid grey;
+    height: 61px;
+    text-align: center;
+}
+.nav1 ul{
+    display: flex;
+    gap:26px;
+    position: relative;
+    margin-left: 31rem;
+}
+.nav1 select{
+    margin-left: 58rem;
+    position: absolute;
+    top:27px;
+}
+.section{
+    display: flex;
+}
+.section .left-part{
+    width:50%;
+    background-color: #F7F9FA;
+    text-align: center;
+    height: 610px;
+}
+.section .right-part{
+    width:50%;
+    background-color: #F7F9FA;
+    text-align: center;
+    height: 410px;
+}

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display:flex;
+            column-gap: 90px;
+            margin-top: -74px;
+            margin-bottom:24px;
+            height: 100px;
+        }
+        img{
+            margin-bottom: 30px;
+            margin-top: -33px;
+        }
+       .one-one ul{
+           display: flex;
+           gap: 5px;
+           
+        }
+        .one-one li{
+            color: grey;
+            list-style: none;
+        }
+        .header{
+            background-color: #F1F1F1;
+            padding: 1px 14px;
+            margin: 10px 20px;
+            border-radius: 10px;
+        }
+        .product1{
+            background-color: white;
+            border: 1px solid grey;
+            margin-bottom: 16px;
+            padding-bottom: 10px;
+        }
+        .START-FROM{
+            color: brown;
+        }
+        .NIZAMPET{
+            color: grey;
+        }
+        p{
+            color: grey;
+        }
+        #end-time{
+            color: grey;
+        }
+        #date{
+            color: red;
+        }
+        #rating{
+            background-color: rgb(97, 171, 97);
+            color: white;
+            padding: 1px 1px;
+        }
+        .tatal{
+            display: flex;
+            gap: 10px;
+        }
+        button{
+            margin-top:44px ;
+        }
+        #button:active{
+            color: red;
+            background-color: blue;
+            margin-bottom: 10px;
+        }
+        h5{
+            margin-bottom: -56px;
+        }
+    </style>
+</head>
+<body>
+    <div class="total">
+
+    <div class="product1">
+    <header class="header">
+    <h4 id="start-from"><span class="START-FROM">START FROM</span>
+        MIYAPUR<span class="NIZAMPET"> NIZAMPET + 17 OTHER STOPS</span></h4>
+    </header>
+    <section class="section">
+    <img src="https://s3.rdbuz.com/Images/webplatform/india/primo/primoLogo.svg" id="image" width="100px" height="100px">
+    <div class="container">
+        <div class="one">
+            <h4 id="travel-company">November Travels</h4>
+            <p id="seat-type">Bharat Benz A/C Sleeper (2+1)</p>
+        
+            <div class="one-one">
+                <ul>
+                    <li><i class="fa-sharp fa-solid fa-bus"></i></li>
+                    <li><i class="fa-sharp fa-solid fa-bottle-water"></i></li>
+                    <li><i class="fa-sharp fa-solid fa-blanket"></i></li>
+                    <li><i class="fa-sharp fa-solid fa-plug"></i></li>
+                    <li>livetracking</li>
+                </ul>
+                </div>
+            </div>
+            <div class="two">
+                <h2 id="strt-time">19:20</h2>
+                <p>Miyapur</p>
+            </div>
+            <div class="three">
+                <p id="time-duration">11h 45m</p>
+            </div>
+            <div class="four">
+                <h3 id="end-time">07:15</h3>
+                <h3  id="date">07-Jun</h3>
+                <h3 id="end-place">Marathahalli</h3>
+            </div>
+            <div class="five">
+                <p id="rating"><i class="fa-light fa-star"></i>4.6</p>
+                <h3><i class="fa-thin fa-people-simple"></i>635</h3>
+
+            </div>
+            <div class="six">
+                <h3>Starts from </h3>
+                <h1 id="current-price"></h1>
+                <h5 id="discount">5</h5>
+                <button id="button" onclick = "myFunction()">current-price</button>
+            </div>
+            <div class="seven">
+                <p>13 Seats available</p>
+                <p>4 Single</p>
+            </div>
+        </div>
+    </section>
+  </div>
+  <script>
+    var buses = [ {
+                    name: 'November Travel',
+                    price: 800,
+                    imgSrc: 'https://s3.rdbuz.com/Images/webplatform/india/primo/primoLogo.svg',
+                    ratingCount: 635,
+                    averageRating: 4.6,
+                    discount: 5,
+                  }
+                ];
+                document.getElementById('current-price').innerHTML = buses[0].price;
+                document.getElementById('discount').innerHTML = buses[0].discount;
+
+                function myFunction(){
+                    document.getElementById('current-price').innerHTML = buses[0].price-(buses[0].price*buses[0].discount)/100;
+
+                }
+</script>
+</body>
+</html>  

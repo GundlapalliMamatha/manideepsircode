@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            margin: 4rem;
+            background-image: url(backgroundimage.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+        }
+
+        #form {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        input,
+        textarea {
+            width: 300px;
+            padding: 5px;
+            margin-top: 5px;
+            border: 1px solid black;
+        }
+
+        #nameerror, #emailerror, #mobileerror, #addresserror {
+            color: brown;
+        }
+
+        label {
+            margin-top: 30px;
+            color: aliceblue;
+        }
+    </style>
+</head>
+<body>
+<div id="form">
+    <form onsubmit="return validateForm()">
+        <h1>Registration Form</h1>
+        <label for="Nameinput">Name</label>&nbsp;&nbsp;
+        <input type="text" id="Nameinput" placeholder="Enter Name"><br/>
+        <p id="nameerror"></p>
+        <label for="Emailinput">Email</label>&nbsp;&nbsp;
+        <input type="email" id="Emailinput" placeholder="Enter Email"><br/>
+        <p id="emailerror"></p>
+        <label for="Mobilenumberinput">Mobile Number</label>
+        <input type="text" id="Mobilenumberinput" placeholder="Enter Mobile Number"><br/>
+        <p id="mobileerror"></p>
+        <label for="Addressinput">Address</label>
+        <textarea placeholder="Enter Address" id="Addressinput"></textarea><br/>
+        <p id="addresserror"></p>
+        <button type="submit">Add</button>
+    </form>
+</div>
+
+<script>
+    function validateForm() {
+        let name = document.getElementById("Nameinput").value;
+        let email = document.getElementById("Emailinput").value;
+        let mobileNumber = document.getElementById("Mobilenumberinput").value;
+        let address = document.getElementById("Addressinput").value;
+        let valid = true;
+
+        if (name === "") {
+            document.getElementById("nameerror").innerText = 'Please fill in the name';
+            valid = false;
+        } else {
+            document.getElementById("nameerror").innerText = '';
+        }
+
+        if (email === "") {
+            document.getElementById("emailerror").innerText = 'Please fill in the email';
+            valid = false;
+        } else {
+            document.getElementById("emailerror").innerText = '';
+        }
+
+        if (mobileNumber === "") {
+            document.getElementById("mobileerror").innerText = 'Please fill in the mobile number';
+            valid = false;
+        } else {
+            document.getElementById("mobileerror").innerText = '';
+        }
+
+        if (address === "") {
+            document.getElementById("addresserror").innerText = 'Please fill in the address';
+            valid = false;
+        } else {
+            document.getElementById("addresserror").innerText = '';
+        }
+
+        return valid;
+    }
+    document.getElementById("nameinput").value
+    if((/^[a-zA-Z0-9_\s]$/).test("nameinput")){
+      Window.alert("success")  
+    }
+</script>
+</body>
+</html>

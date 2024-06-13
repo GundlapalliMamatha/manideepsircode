@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APARTMENT</title>
+    
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        body{
+            overflow: auto; /*--means its getting 2(x,y-axis)scrolls--!>*/
+        }
+        .header{
+            display: flex;
+            align-items: baseline;
+            background-color: #e40c25; 
+            background-size: 50px 50px;
+            height: 20px;
+            justify-content: space-between;
+            visibility: visible;
+            overflow: visible;
+        }
+        p,i{
+        color:white;
+        }
+        .icon i{
+        margin-right: 10px;
+        }
+        nav{
+            display: flex;
+            justify-content: space-between;
+            background-color: white;
+            align-items: center;
+            height: 90px;
+            box-shadow: 10px 10px 10px #F5F5F5;
+        }
+        nav ul,li{
+            display: flex;
+            justify-content: space-between;
+            margin-right: 10px;
+        }
+        .rent-an-apartment-for-vacation{
+            background-image: url("	https://preview.colorlib.com/theme/vacationrental/images/bg_1.jpg");
+            background-position: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-attachment: fixed;
+            height: 500px;
+            position:relative;
+            
+            
+        }
+        h1{
+            color: white;
+            font-size: 90px;
+        }
+        .ContactUs-btn button{
+            color: black;
+            background-color: grey;
+            border: none;
+            padding: 12px;
+
+        }
+        .LearnMore-btn button{
+            color: #F5F5F5;
+            background-color: #e40c25;
+            border: none;
+            padding: 12px;
+        }
+        .btn{
+            display: flex;
+            column-gap: 20px;
+        }
+        .cart{
+            position:absolute;
+            display: flex;
+              
+            top:400px; 
+        
+        }
+        .cart1{
+            width:100%;
+            margin-right: 50px;
+            margin-left: 35px;
+            padding:20px;
+            background-color: white;
+            font-family: sans-serif;
+            text-align: center;
+
+        }
+        .cart1 p{
+            color: rgb(112, 102, 102);
+            margin-bottom: 5px;
+        }
+        .cart button{
+            background-color: #e40c25;
+            padding: 10px;
+            border: none;
+        }
+    
+    </style>
+</head>
+<body>
+    <!--   header            -->
+        <div>
+            <header>
+            <div class="header">
+                <p>Phone no: +00 1234 567 or email us: emailsample@email.com</p>
+                <div class="icon">
+                <span><i class="fa-brands fa-facebook-f"></i></span>
+                <span><i class="fa-brands fa-twitter"></i></span>
+                <span><i class="fa-brands fa-square-instagram"></i></span>
+                <span><i class="fa-brands fa-basketball"></i></span>
+            </div>
+        </header>
+        </div>
+        </div>
+        <!--      nav bar          -->
+        <nav>
+            <h3>Vacation<span>Rental</span></h3>
+            <ul>
+               <li>Home</li>
+               <li>About</li>
+               <li>Services</li>
+               <li>Apartment Room</li>
+               <li>Blog</li>
+               <li>Contact</li>
+            </ul>
+        </nav>
+        <!--rent an aprtment for vacation image part-->
+        <div class="rent-an-apartment-for-vacation">
+            <p style="padding-top:10px;">Welcome to Vacation Rental</p>
+            <h1>Rent an  </h1>
+            <h1>appartment for</h1>
+            <h1>your vacation</h1>
+            <div class="btn">
+            <div class="LearnMore-btn">
+            <button>Learn More</button>
+            </div>
+            <div class="ContactUs-btn">
+            <button>Contact Us</button>
+            <!--form-->
+            <form>
+                <h3>Book your apartment</h3>
+                <div class="fullname">
+                <label for="fullname"><b>fullname</b></label>
+                <input type="text" placeholder="Enter fullname" name="fullname" required>
+                </div>
+                <div class="check-in"><input type="date" placeholder="check in" required></div>
+                <div class="check-out"> <input type="date" placeholder="check out" required></div>
+                <div class="adults">
+                    <select>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                </div>
+                <div class="chaild">
+                    <select>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                </div>
+            </form>
+            
+        </div>
+            </div>
+            <!--rent an aprtment for vacation 3cart items-->    
+            <div class="cart">
+                <div class="cart1">
+                    <img src="https://preview.colorlib.com/theme/vacationrental/images/services-1.jpg.webp" height="200px" width="300px">
+                    <h3>Map Direction</h3>
+                    <p>Even the all-powerful Pointing has no  </p>
+                    <p>control about the blind texts it is an almost</p>
+                    <p>unorthographic.</p>
+                    <button>ReadMore</button>
+                </div>
+                 <div class="cart1">
+                    <img src="https://preview.colorlib.com/theme/vacationrental/images/services-2.jpg.webp" height="200px" width="300px">
+                    <h3>Accomodation Services</h3>
+                    <p>Even the all-powerful Pointing has no  </p>
+                    <p>control about the blind texts it is an almost</p>
+                    <p>unorthographic.</p>
+                    <button>ReadMore</button>
+                </div>
+                 <div class="cart1">
+                    <img src="https://preview.colorlib.com/theme/vacationrental/images/services-3.jpg.webp" height="200px" width="300px">
+                    <h3>Great Experience</h3>
+                    <p>Even the all-powerful Pointing has no  </p>
+                    <p>control about the blind texts it is an almost</p>
+                    <p>unorthographic.</p>
+                    <button>ReadMore</button>
+                </div>
+
+
+
+            </div>
+            
+        </div>
+      
+    
+
+
+
+
+
+
+
+
+    <script src="https://kit.fontawesome.com/1e8feb5b6d.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

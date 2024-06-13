@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/index.css">
+</head>
+<body>
+<div class="navbar">
+    <div class="nav1">
+    <img src="https://st2.zoom.us/static/6.3.22368/image/new/topNav/Zoom_logo.svg" width="100px" height="100px" id="img">
+    </div>
+    <div class="nav1">
+     <ul>
+        <li>New to Zoom?</li>
+        <li><a href="./About.html">ABOUT</a></li>
+        <li><a href="./signupfree">Signupfree</a></li>
+        <li><a href="./Support.html">MENU</a></li>         
+     </ul>
+     <select name="languages" id="languages">
+     <option value="English">English</option>
+     </select>
+    </div>
+    </div>
+<section class="section">
+    <div class="left-part">
+        <img src="zoomimage.png" height="400px" width="400px">
+    </div>
+    <div class="rightpart">
+        <form>
+            <h1>Sign In</h1>
+            <input type="username" placeholder="email here" value="" id="username"><br><br>
+            <input type="password" placeholder="password here" value="" id="password">
+            <h4><a href="Forgetpassword">Forget password?</a></h4>
+            <h4>Help</h4>
+            <button onclick="validateCredentials()">Continue</button>
+            <p>By signing in, I agree to the <a href="Zoom's Privacy Statement">Zoom's Privacy Statement</a> and <a href="Terms of Service">Terms of Service</a></p>
+
+        </form>
+    </div>
+</section>
+</body>
+<script>
+    var users = [
+                 {
+                    username : "mamatha",
+                    password : "123"
+                 },
+                 {
+                    username : "mounika",
+                    password : "abcd"
+                 }
+                ];
+   
+    function validateCredentials(){
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+        var isvalid = (username === users[1].username) && (password === users[1].password) ? alert("succsess") :  alert("fail");
+        var isvalid = (username === users[0].username) && (password === users[0].password) ? navigateToHome() :  alert("fail");
+    }   
+
+    function navigateToHome(){
+        window.location.href = "../home.html";
+    }    
+
+</script>
+</html>

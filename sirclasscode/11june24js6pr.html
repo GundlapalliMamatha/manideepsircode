@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    .product-card {
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        display: flex;
+    }
+
+    .product-image {
+        width: 200px;
+        height: auto;
+    }
+
+    .product-details {
+        padding: 16px;
+    }
+
+    .product-title {
+        font-size: 1.25em;
+        font-weight: bold;
+        color: #333;
+        margin: 0 0 8px;
+    }
+
+    .product-price {
+        display: flex;
+        align-items: baseline;
+        margin-bottom: 8px;
+    }
+
+    .current-price {
+        font-size: 1.5em;
+        font-weight: bold;
+        color: #333;
+    }
+
+    .original-price {
+        font-size: 0.875em;
+        color: #888;
+        text-decoration: line-through;
+        margin-left: 8px;
+    }
+
+    .discount {
+        font-size: 0.875em;
+        color: #10b981;
+        margin-left: 8px;
+    }
+
+    .product-rating {
+        display: flex;
+        align-items: center;
+    }
+
+    .star {
+        color: #fbbf24;
+        font-size: 1em;
+    }
+
+    .star.gray {
+        color: #e5e7eb;
+    }
+
+    .rating-count {
+        font-size: 0.875em;
+        color: #555;
+        margin-left: 8px;
+    }
+</style>
+</head>
+<body>
+    <div id="products-container">
+        
+    </div>
+    <script>
+    var filteredProducts = [
+            {
+                name: 'Voltas Beko, A Tata Product 6 Kg 5 Star Fully Automatic Front Loading Washing Machine (2023 Model, WFL6012B7CUSKA/WXV, White, In-Built Heater)',
+                price: 36990,
+                imgSrc: 'https://m.media-amazon.com/images/I/71tXNy7SVZL._AC_UY218_.jpg',
+                ratingCount: 110,
+                averageRating: 3.8,
+                discount: 43,
+                brand: 'Voltas'
+            },
+            {
+                name: 'IFB 6 Kg 5 Star AI Powered Fully Automatic Front Load Washing Machine 2X Power Steam (DIVA AQUA GBS 6010, 2023 Model, Grey, In-built Heater, 4 years Comprehensive Warranty)',
+                price: 36990,
+                imgSrc: 'https://m.media-amazon.com/images/I/71tXNy7SVZL._AC_UY218_.jpg',
+                ratingCount: 110,
+                averageRating: 3.8,
+                discount: 43,
+                brand: 'IFB'
+            },
+            {
+                name: 'Samsung 7 kg Fully-Automatic Top Loading Washing Machine (WA70A4002GS/TL, Imperial Silver)',
+                price: 36990,
+                imgSrc: 'https://m.media-amazon.com/images/I/71tXNy7SVZL._AC_UY218_.jpg',
+                ratingCount: 110,
+                averageRating: 3.8,
+                discount: 43,
+                brand: 'Samsung'
+            },
+            {
+                name: 'Voltas Beko, A Tata Product 6 Kg 5 Star Fully Automatic Front Loading Washing Machine (2023 Model, WFL6012B7CUSKA/WXV, White, In-Built Heater)',
+                price: 36990,
+                imgSrc: 'https://m.media-amazon.com/images/I/71tXNy7SVZL._AC_UY218_.jpg',
+                ratingCount: 110,
+                averageRating: 3.8,
+                discount: 43,
+                brand: 'Voltas'
+            },
+            {
+                name: 'IFB 6 Kg 5 Star AI Powered Fully Automatic Front Load Washing Machine 2X Power Steam (DIVA AQUA GBS 6010, 2023 Model, Grey, In-built Heater, 4 years Comprehensive Warranty)',
+                price: 36990,
+                imgSrc: 'https://m.media-amazon.com/images/I/71tXNy7SVZL._AC_UY218_.jpg',
+                ratingCount: 110,
+                averageRating: 3.8,
+                discount: 43,
+                brand: 'IFB'
+            },
+            {
+                name: 'Samsung 7 kg Fully-Automatic Top Loading Washing Machine (WA70A4002GS/TL, Imperial Silver)',
+                price: 36990,
+                imgSrc: 'https://m.media-amazon.com/images/I/71tXNy7SVZL._AC_UY218_.jpg',
+                ratingCount: 110,
+                averageRating: 3.8,
+                discount: 43,
+                brand: 'Samsung'
+            }
+        ];
+        var productsStr = '';
+        for (var i = 0; i < filteredProducts.length; i++) {
+            // for (var key in products[i]) {
+            //     console.log(key, products[i][key]);
+            // }
+            productsStr += `
+                <div class="product-card">
+                    <img class="product-image" src=${filteredProducts[i].imgSrc}
+                        alt="No Image" width="250px" id="product-image">
+                    <div class="product-details">
+                        <h2 class="product-title" id="product-title">${filteredProducts[i].name}</h2>
+                        <div class="product-price">
+                            <span class="current-price" id="current-price">${filteredProducts[i].price - filteredProducts[i].discount}</span>
+                            <span class="original-price" id="original-price">${filteredProducts[i].price}</span>
+                            <span class="discount" id="discount">${filteredProducts[i].discount}</span>
+                        </div>
+                        <div class="product-rating">
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9734;</span>
+                            <span class="rating-count" id="rating-count">${filteredProducts[i].averageRating}</span>
+                        </div>
+                        <button onclick="addToCart()">Add to Cart</button>
+                    </div>
+                </div>`;
+        }
+
+        document.getElementById('products-container').innerHTML = productsStr;
+
+        console.log(productsStr);
+        </script>    
+</body>
+</html>
